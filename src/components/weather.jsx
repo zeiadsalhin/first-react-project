@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import Lottie from './LottieAnimation';
 const Weather = () => {
   // State variables
   const [city, setCity] = useState('');  // Default city
@@ -38,13 +38,14 @@ const Weather = () => {
   // Render
   return (
     <div className="weather-container">
-      <h1>Weather App</h1>
+      <Lottie/>
+      <h1 className='my-8 font-semibold'>Weather App</h1>
       
       {/* Input field to change city */}
       <div className="flex flex-col gap-4">
   <div className="w-full">
     <input
-      className="w-full p-4 text-lg border-2 border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-600 bg-white shadow-lg placeholder-gray-500 transition duration-300"
+      className="w-full p-2 text-base rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-400 focus:border-blue-600 bg-black placeholder-gray-500 transition duration-300"
       type="text"
       value={city}
       onChange={(e) => setCity(e.target.value)}
@@ -68,13 +69,12 @@ const Weather = () => {
       {error && city!=null && <p>{error}</p>}
 
       {weatherData && (
-        <div>
-          <h2>{weatherData.location.name}, {weatherData.location.country}</h2>
+        <div className='my-4 text-lg'>
+          <h2  className='font-semibold mb-2'>{weatherData.location.name}, {weatherData.location.country}</h2>
           <p>{weatherData.current.condition.text}</p>
           <p>Temperature: {weatherData.current.temp_c}°C</p>
           <p>Humidity: {weatherData.current.humidity}%</p>
           <p>Wind Speed: {weatherData.current.wind_kph} kph</p>
-          <p>AirQuality: {weatherData.current.aqi} kph</p>
         </div>
       )}
     </div>
