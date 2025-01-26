@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-do
 // Importing the pages
 import Home from './components/Home';
 import About from './components/About';
+import Weather from './components/weather';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -19,29 +20,29 @@ function App() {
 
   return (
     <Router>
+        {/* Routes for pages */}
+        <Routes>
+          <Route path="/" element={<Weather />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       <div>
         {/* Navigation links */}
-        <nav >
-          <ul className='flex justify-around list-none'>
-
+        <nav className='mt-20'>
+          <div className='flex justify-center list-none'>
             {navItems.map((item, index)=>(
-              <li key={index} className='px-4'>
+              <li key={index} className='px-4a'>
                 <NavLink  to={item.path} className={({ isActive }) =>
-                isActive ? 'opacity-90' : 'text-gray-700'
+                isActive ? 'hidden' : 'text-gray-700'
               }>
                 {item.name}
                 </NavLink >
               </li>
             ))}
 
-          </ul>
+          </div>
         </nav>
 
-        {/* Routes for pages */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+
       </div>
     </Router>
   )
