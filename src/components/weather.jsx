@@ -45,7 +45,7 @@ const Weather = () => {
       <div className="flex flex-col gap-4">
   <div className="w-full">
     <input
-      className="w-full p-2 text-base rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-400 focus:border-blue-600 bg-black placeholder-gray-500 transition duration-300"
+      className="w-full p-2 text-base rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-600 bg-black placeholder-gray-500 transition duration-300"
       type="text"
       value={city}
       onChange={(e) => setCity(e.target.value)}
