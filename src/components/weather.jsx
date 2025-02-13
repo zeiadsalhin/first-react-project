@@ -142,20 +142,20 @@ const Weather = () => {
   // Render
   return (
     <div className="weather-container transition-all duration-500 ease-in-out p-4 min-w-screen lg:min-w-[40vw]">
-      {!weatherData && !loading && (
+      {/* {!weatherData && loading && (
         <div>
           <Lottie/>
           <h1 className='my-8 font-semibold'>Weather App</h1>
         </div>
-      )}
-      {weatherData  && (
-        <div className='flex justify-center gap-4'>
-        <div className='w-[5rem] my-auto'>
+      )} */}
+      {/* {weatherData && ( */}
+        <div className={`${weatherData ? 'flex' : undefined } justify-center gap-4`}>
+        <div className={`${weatherData? 'w-[5rem]' : 'w-[10rem] mx-auto'} my-auto`}>
         <Lottie />
         </div>
-        <h2 className='my-8 font-semibold text-2xl'>Weather App</h2>
+        <h2 className='my-5 font-semibold text-2xl'>Weather App</h2>
         </div>
-      )}
+       {/* )} */}
       
       {/* Input field to change city */}
       <div className="flex gap-2">
@@ -168,7 +168,7 @@ const Weather = () => {
             placeholder="Enter city"
           />
             <button
-            onClick={() => fetchWeatherData()}
+            onClick={() => city ? fetchWeatherData() : undefined}
             className="p-2 bg-blue-500 text-white hover:bg-blue-600 transition duration-300"
           >
             Search
@@ -188,7 +188,7 @@ const Weather = () => {
             <FontAwesomeIcon className='my-auto' size='xl' icon={faSpinner} spin />
             </div>}
           
-          {error && city !== null && <div className="error flex justify-center min-h-[10rem]">
+          {error && !loading && city !== null && <div className="error flex justify-center min-h-[10rem]">
             <p className='my-auto text-lg font-semibold text-red-700/90'>{error}</p>
             </div>}
 

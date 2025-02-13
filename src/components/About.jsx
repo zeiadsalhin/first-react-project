@@ -6,7 +6,7 @@ function About() {
     }, []);
 
   return (
-    <div className='flex w-screen min-h-[70vh]'>
+    <div className='flex min-w-screen lg:min-w-[40vw] min-h-[70vh]'>
       <div className="my-auto mx-auto">
       <h2 className='text-4xl font-semibold'>About Us</h2>
       <div className="w-[3rem] bg-indigo-600/80 mt-4 mx-auto h-1 rounded-2xl"></div>
