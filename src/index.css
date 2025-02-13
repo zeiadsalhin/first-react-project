@@ -68,4 +68,21 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  button#search {
+    background-color:#bcbfff;
+  }
+  button#gps {
+    background-color:#676eff;
+  }
+  p {
+    color: #1a1a1a;
+  }
+  input {
+    background-color: #f9f9f9;
+  }
+  #inputMain {
+    background-color: #f9f9f9;
+    border-color: #f9f9f9;
+    border: 2;
+  }
 }

@@ -159,7 +159,7 @@ const Weather = () => {
       
       {/* Input field to change city */}
       <div className="flex gap-2">
-        <div className="flex w-full border-2 border-black bg-black rounded-lg overflow-hidden">
+        <div id='inputMain' className="flex w-full border-2 border-black bg-black rounded-lg overflow-hidden">
           <input
             className="w-full p-2 text-base focus:outline-none bg-black placeholder-gray-500 transition duration-300"
             type="text"
@@ -168,13 +168,15 @@ const Weather = () => {
             placeholder="Enter city"
           />
             <button
+            id='search'
             onClick={() => city ? fetchWeatherData() : undefined}
-            className="p-2 bg-blue-500 text-white hover:bg-blue-600 transition duration-300"
+            className="p-2 bg-blue-500 text-whitea hover:bg-blue-600 transition duration-300"
           >
             Search
           </button>
         </div>
         <button
+          id='gps'
           onClick={getCityFromIP}
           className="p-2 bg-green-500 text-white hover:bg-green-600 transition duration-300 flex items-center gap-2"
         >
