@@ -211,9 +211,9 @@ const Weather = () => {
             
             <div className='forecast -mt-10'>
               <h2 className='font-semibold mb-8 text-left text-2xl'>Forecast</h2>
-              <div className='flex flex-wrap justify-center gap-2'>
+              <div className='flex flex-wrap justify-center gap-2 text-sm'>
                 {forecastData.map((day) => (
-                  <div key={day.date} className='forecast-day p-3 space-y-1 border rounded-lg max-w-[7.5rem] md:min-w-[7.5rem]'>
+                  <div key={day.date} className='forecast-day p-3 space-y-1 border rounded-lg max-w-[7.2rem] min-w-[7.2rem] md:min-w-[7.5rem]'>
                     <p className='font-semibold'>{new Date(day.date).toLocaleDateString()}</p>
                     <div className='w-[3rem] mx-auto -mt-4 mb-2'>{getWeatherIcon(day.day.condition.code)}</div>
                     <p>{day.day.condition.text}</p>
