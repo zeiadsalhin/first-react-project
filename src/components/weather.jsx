@@ -178,6 +178,7 @@ const Weather = () => {
         <button
           id='gps'
           name='GPS-search'
+          aria-label='GPS-search'
           onClick={getCityFromIP}
           className="p-2 bg-green-500 text-white hover:bg-green-600 transition duration-300 flex items-center gap-2"
         >
