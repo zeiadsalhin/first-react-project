@@ -1,6 +1,3 @@
-import { useState, useEffect } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, NavLink, Navigate, useLocation } from 'react-router-dom';
 
@@ -30,7 +27,7 @@ function App() {
       <div>
         {/* Navigation links */}
         {location.pathname !== '/Error404' && (
-          <nav className="mt-20">
+          <nav className="my-5">
             <div className="flex justify-center list-none">
               {navItems.map((item, index) => (
                 <li key={index} className="flex gap-4">
