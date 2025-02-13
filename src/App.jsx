@@ -28,9 +28,10 @@ function App() {
         {/* Navigation links */}
         {location.pathname !== '/Error404' && (
           <nav className="my-5">
-            <div className="flex justify-center list-none">
-              {navItems.map((item, index) => (
-                <li key={index} className="flex gap-4">
+            <div className="flex justify-center list-none">             
+                <menu>
+                {navItems.map((item, index) => (
+                  <li key={index} className="flex gap-4">
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
@@ -39,8 +40,9 @@ function App() {
                   >
                     {item.name}
                   </NavLink>
-                </li>
+                </li>                
               ))}
+              </menu>
             </div>
           </nav>
         )}
